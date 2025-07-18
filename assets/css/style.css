@@ -1,6 +1,6 @@
-/* Paclitaxel Dose Calculator - Custom Styles */
+/* Paclitaxel AI Calculator - Enhanced Styles */
 
-/* Color Variables */
+/* Color Variables - AI Theme */
 :root {
     --primary-color: #1e3a8a;
     --secondary-color: #3b82f6;
@@ -8,10 +8,14 @@
     --success-color: #10b981;
     --warning-color: #f59e0b;
     --danger-color: #ef4444;
+    --ai-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --ai-success: #00d4aa;
+    --ai-primary: #6366f1;
     --text-color: #1f2937;
     --text-muted: #6b7280;
     --bg-color: #f8fafc;
     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --ai-glow: 0 0 20px rgba(99, 102, 241, 0.3);
 }
 
 /* Global Styles */
@@ -31,18 +35,40 @@ body {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    background: var(--ai-gradient);
+    border: none;
+    box-shadow: var(--ai-glow);
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+/* AI-specific styles */
+.hero-badge {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.bg-success {
+    background: linear-gradient(135deg, var(--ai-success) 0%, #00b894 100%) !important;
+}
+
+.text-success {
+    color: var(--ai-success) !important;
 }
 
 /* Navigation */
 .navbar {
     box-shadow: var(--card-shadow);
+    background: var(--ai-gradient) !important;
 }
 
 .navbar-brand {
@@ -56,7 +82,7 @@ body {
 }
 
 .navbar-nav .nav-link:hover {
-    color: var(--accent-color) !important;
+    color: var(--ai-success) !important;
 }
 
 /* Hero Section */
@@ -84,9 +110,25 @@ body {
     margin-bottom: 0;
 }
 
+.hero-improvement {
+    margin-top: 1.5rem;
+}
+
+.hero-improvement .alert {
+    border: none;
+    box-shadow: var(--card-shadow);
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: var(--card-shadow); }
+    to { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
+}
+
 .hero-image .card {
     border: none;
     border-radius: 1rem;
+    box-shadow: var(--ai-glow);
 }
 
 .preview-demo {
@@ -101,9 +143,42 @@ body {
 .result-preview {
     margin-top: 1rem;
     padding: 0.75rem;
-    background-color: #f0f9ff;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
     border-radius: 0.5rem;
     text-align: center;
+}
+
+/* AI Performance Section */
+#ai-performance {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.performance-card {
+    margin-bottom: 1rem;
+}
+
+.performance-card .card {
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--card-shadow);
+}
+
+.performance-card .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.performance-card .card-body {
+    padding: 2rem;
+}
+
+.performance-card i {
+    margin-bottom: 1rem;
+}
+
+.performance-card .badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
 }
 
 /* Calculator Section */
@@ -125,6 +200,7 @@ body {
 .card-header {
     border-radius: 1rem 1rem 0 0 !important;
     padding: 1.5rem;
+    background: var(--ai-gradient) !important;
 }
 
 .card-body {
@@ -151,8 +227,8 @@ body {
 
 .form-select:focus,
 .form-range:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.2rem rgba(30, 58, 138, 0.25);
+    border-color: var(--ai-primary);
+    box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.25);
 }
 
 .form-text {
@@ -163,32 +239,35 @@ body {
 #efficacyValue {
     font-size: 1.1rem;
     font-weight: 600;
+    color: var(--ai-primary);
 }
 
-/* Range Slider Styling */
+/* Enhanced Range Slider */
 .form-range {
     height: 0.5rem;
-    background-color: #e5e7eb;
+    background: linear-gradient(90deg, #e5e7eb 0%, var(--ai-primary) 100%);
     border-radius: 0.25rem;
     outline: none;
 }
 
 .form-range::-webkit-slider-thumb {
-    background-color: var(--primary-color);
-    border: none;
-    height: 1.25rem;
-    width: 1.25rem;
+    background: var(--ai-gradient);
+    border: 2px solid white;
+    height: 1.5rem;
+    width: 1.5rem;
     border-radius: 50%;
     cursor: pointer;
+    box-shadow: var(--ai-glow);
 }
 
 .form-range::-moz-range-thumb {
-    background-color: var(--primary-color);
-    border: none;
-    height: 1.25rem;
-    width: 1.25rem;
+    background: var(--ai-gradient);
+    border: 2px solid white;
+    height: 1.5rem;
+    width: 1.5rem;
     border-radius: 50%;
     cursor: pointer;
+    box-shadow: var(--ai-glow);
 }
 
 /* Results Section */
@@ -198,7 +277,7 @@ body {
 
 #resultsDisplay {
     padding: 1rem;
-    background-color: var(--bg-color);
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
     border-radius: 0.5rem;
     min-height: 300px;
     display: flex;
@@ -212,6 +291,7 @@ body {
     padding: 1.5rem;
     box-shadow: var(--card-shadow);
     margin-bottom: 1rem;
+    border: 1px solid rgba(99, 102, 241, 0.1);
 }
 
 .result-card h3 {
@@ -241,12 +321,34 @@ body {
 
 .result-item span {
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--ai-primary);
+}
+
+.result-item .fw-bold {
+    color: var(--ai-success) !important;
+    font-size: 1.1rem;
+}
+
+/* AI-specific result styling */
+.ai-result {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+}
+
+.ai-confidence {
+    background: linear-gradient(135deg, #00d4aa 0%, #00b894 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
 }
 
 /* Charts Section */
 #charts {
-    background-color: var(--bg-color);
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
 }
 
 .chart-container {
@@ -270,14 +372,20 @@ body {
     box-shadow: var(--card-shadow);
     margin-bottom: 1rem;
     transition: transform 0.3s ease;
+    border: 1px solid rgba(99, 102, 241, 0.1);
 }
 
 .feature-box:hover {
     transform: translateY(-5px);
+    box-shadow: var(--ai-glow);
 }
 
 .feature-box i {
     margin-bottom: 1rem;
+    background: var(--ai-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .feature-box h5 {
@@ -296,7 +404,7 @@ body {
     display: inline-block;
     width: 1rem;
     height: 1rem;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--ai-primary);
     border-radius: 50%;
     border-top-color: transparent;
     animation: spin 1s linear infinite;
@@ -308,7 +416,7 @@ body {
     }
 }
 
-/* Buttons */
+/* Enhanced Buttons */
 .btn {
     border-radius: 0.5rem;
     font-weight: 500;
@@ -321,28 +429,68 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: var(--ai-gradient);
     border: none;
+    box-shadow: var(--ai-glow);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.btn-outline-primary {
+    border-color: var(--ai-primary);
+    color: var(--ai-primary);
+}
+
+.btn-outline-primary:hover {
+    background: var(--ai-gradient);
+    border-color: var(--ai-primary);
+    color: white;
 }
 
 /* Badges */
 .badge {
     border-radius: 0.375rem;
     font-weight: 500;
+    padding: 0.5rem 0.75rem;
 }
 
 .badge.bg-success {
-    background-color: var(--success-color) !important;
+    background: linear-gradient(135deg, var(--ai-success) 0%, #00b894 100%) !important;
+}
+
+.badge.bg-info {
+    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%) !important;
+}
+
+.badge.bg-warning {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+}
+
+/* Alert Enhancements */
+.alert {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: var(--card-shadow);
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    color: #065f46;
+    border-left: 4px solid var(--ai-success);
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    color: #0c4a6e;
+    border-left: 4px solid var(--ai-primary);
 }
 
 /* Footer */
 footer {
-    background-color: #1f2937 !important;
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%) !important;
 }
 
 footer a {
@@ -351,7 +499,7 @@ footer a {
 }
 
 footer a:hover {
-    color: var(--accent-color) !important;
+    color: var(--ai-success) !important;
 }
 
 /* Responsive Design */
@@ -374,6 +522,10 @@ footer a:hover {
     
     .display-4 {
         font-size: 2rem;
+    }
+    
+    .performance-card .card-body {
+        padding: 1.5rem;
     }
 }
 
@@ -410,7 +562,7 @@ footer a:hover {
 .btn:focus,
 .form-select:focus,
 .form-range:focus {
-    outline: 2px solid var(--primary-color);
+    outline: 2px solid var(--ai-primary);
     outline-offset: 2px;
 }
 
@@ -429,4 +581,52 @@ footer a:hover {
         box-shadow: none !important;
         border: 1px solid #ccc !important;
     }
+}
+
+/* Special AI Effects */
+.ai-glow-text {
+    background: var(--ai-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ai-border {
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.ai-highlight {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Enhanced Cards */
+.card-ai {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+    box-shadow: var(--ai-glow);
+}
+
+/* Performance Indicators */
+.performance-indicator {
+    position: relative;
+    overflow: hidden;
+}
+
+.performance-indicator::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
 }

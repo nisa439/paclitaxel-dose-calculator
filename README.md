@@ -4,7 +4,7 @@ Akciğer kanseri araştırmaları ve klinik karar desteği için geliştirilmiş
 
 ## 🚀 Canlı Uygulama
 
-**[Demo: https://nisa439.github.io/paclitaxel-dose-calculator](https://nisa439.github.io/paclitaxel-dose-calculator)**
+
 
 ## 🔬 Model Geliştirme ve Araştırma
 
